@@ -6,14 +6,16 @@ from club_reddit_static_assets.club_reddit_static_assets_pipeline_stages import 
 
 
 class ClubRedditStaticAssetsStack(Stack):
-    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+    def __init__(
+        self, scope: Construct, construct_id: str, application_prefix: str, **kwargs
+    ) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
         # CI/CD Integration using CDK Pipelines
         pipeline = CodePipeline(
             self,
             "Pipeline",
-            pipeline_name="StaticAssets",
+            pipeline_name=f"{application_prefix}Pipeline",
             synth=ShellStep(
                 "Synth",
                 input=CodePipelineSource.git_hub(
@@ -29,4 +31,4 @@ class ClubRedditStaticAssetsStack(Stack):
             ),
         )
 
-        pipeline.add_stage(AppStage(self, "ApplicationStage"))
+        pipeline.add_stage(AppStage(self, f"{application_prefix}AppStage"))

@@ -9,11 +9,12 @@ from club_reddit_static_assets.club_reddit_static_assets_pipeline_stack import (
 
 app = cdk.App()
 default_env = cdk.Environment(account="363951782376", region="us-east-1")
+application_prefix = "ClubRedditStaticAssets"
 
 
 ClubRedditStaticAssetsStack(
     app,
-    "ClubRedditStaticAssetsStack",
+    f"{application_prefix}Stack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
@@ -23,6 +24,7 @@ ClubRedditStaticAssetsStack(
     # Uncomment the next line if you know exactly what Account and Region you
     # want to deploy the stack to. */
     env=default_env,
+    application_prefix=application_prefix
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
 )
 
