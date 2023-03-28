@@ -2,8 +2,7 @@ from aws_cdk import Stack  # Duration,; aws_sqs as sqs,
 from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
 from constructs import Construct
 
-from club_reddit_static_assets.club_reddit_static_assets_pipeline_stages import \
-    AppStage
+from club_reddit_static_assets.club_reddit_static_assets_pipeline_stages import AppStage
 
 
 class ClubRedditStaticAssetsStack(Stack):
