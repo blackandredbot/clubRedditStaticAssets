@@ -8,11 +8,11 @@ class ClubRedditStaticAssetsLambdaStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        static_assets_lambda = LambdaToS3(
+        update_assets_lambda = LambdaToS3(
             self,
             "StaticAssets",
             lambda_function_props=_lambda.FunctionProps(
-                code=_lambda.Code.from_asset("lambda"),
+                code=_lambda.Code.from_asset("lambdas/update_assets"),
                 runtime=_lambda.Runtime.PYTHON_3_9,
                 handler="update_static_assets.handler",
             ),
