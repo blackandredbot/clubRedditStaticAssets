@@ -1,8 +1,9 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from club_reddit_static_assets.club_reddit_static_assets_pipeline_stack import \
-    ClubRedditStaticAssetsStack
+from club_reddit_static_assets.club_reddit_static_assets_pipeline_stack import (
+    ClubRedditStaticAssetsStack,
+)
 
 
 # example tests. To run these tests, uncomment this file along with the example

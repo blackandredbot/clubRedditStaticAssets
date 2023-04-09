@@ -1,10 +1,12 @@
 import aws_cdk as cdk
 from constructs import Construct
 
-from club_reddit_static_assets.club_reddit_static_assets_lambda_stack import \
-    ClubRedditStaticAssetsLambdaStack
-from club_reddit_static_assets.club_reddit_static_assets_storage_stack import \
-    ClubRedditStaticAssetsStorageStack
+from club_reddit_static_assets.club_reddit_static_assets_lambda_stack import (
+    ClubRedditStaticAssetsLambdaStack,
+)
+from club_reddit_static_assets.club_reddit_static_assets_storage_stack import (
+    ClubRedditStaticAssetsStorageStack,
+)
 
 
 class AppStage(cdk.Stage):
