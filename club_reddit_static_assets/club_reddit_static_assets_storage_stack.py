@@ -18,7 +18,7 @@ class ClubRedditStaticAssetsStorageStack(Stack):
         ssm_bucket_name = ssm.StringParameter(
             self,
             "AssetsBucketName",
-            string_value=assets_bucket['name'],
+            string_value=assets_bucket.bucket_name,
             parameter_name="/S3/ClubReddit/StaticAssets/Bucket/Name"
         )
 
