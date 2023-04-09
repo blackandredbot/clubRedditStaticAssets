@@ -18,4 +18,4 @@ class ClubRedditStaticAssetsLambdaStack(Stack):
             ),
         )
 
-        self.assets_bucket = static_assets_lambda.s3_bucket
+        self.assets_bucket = update_assets_lambda.s3_bucket
