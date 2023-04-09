@@ -1,6 +1,6 @@
 from aws_cdk import Stack
-from aws_cdk import aws_ssm as ssm
 from aws_cdk import aws_s3_deployment as s3deploy
+from aws_cdk import aws_ssm as ssm
 from constructs import Construct
 
 
@@ -19,7 +19,5 @@ class ClubRedditStaticAssetsStorageStack(Stack):
             self,
             "AssetsBucketName",
             string_value=assets_bucket.bucket_name,
-            parameter_name="/S3/ClubReddit/StaticAssets/Bucket/Name"
+            parameter_name="/S3/ClubReddit/StaticAssets/Bucket/Name",
         )
-
-
