@@ -23,8 +23,8 @@ class ClubRedditStaticAssetsStack(Stack):
                 ),
                 commands=[
                     "npm install -g aws-cdk",
-                    "python3 -m pip install -r lambda/update_static_assets_reqs.txt -t ./lambda",
-                    "zip -r lambda/club_reddit_static_assets_layer.zip ./lambda/",
+                    "python3 -m pip install -r lambdas/update_assets/update_static_assets_reqs.txt -t ./lambdas/update_assets/",
+                    "zip -r lambdas/update_assets/club_reddit_static_assets_layer.zip ./lambdas/update_assets",
                     "python -m pip install -r requirements.txt",
                     "cdk synth",
                 ],
